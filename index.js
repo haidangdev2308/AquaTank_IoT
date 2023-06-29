@@ -53,18 +53,18 @@ function toast({ title = "", message = "", type = "info", duration = 2000 }) {
     }
 
     //current day, month
-    const dayMonth = document.querySelector('.weather__currentday')
-    var date = new Date()
-    dayMonth.innerHTML = `${date.getDate()} THÁNG ${date.getMonth() + 1}`
+    // const dayMonth = document.querySelector('.weather__currentday')
+    // var date = new Date()
+    // dayMonth.innerHTML = `${date.getDate()} THÁNG ${date.getMonth() + 1}`
 
     //timing
     let section = document.querySelector("section"),
-  icons = document.querySelector(".icons");
-  icons.onclick = ()=>{
+    icons = document.querySelector(".icons");
+    icons.onclick = ()=>{
     section.classList.toggle("dark");
-  }
+    }
   // creating a function and calling it in every seconds
-  setInterval(()=>{
+    setInterval(()=>{
     let date = new Date(),
     hour = date.getHours(),
     min = date.getMinutes(),

@@ -13,7 +13,7 @@ html {
     flex-direction: column;
     width: 1200px;
     margin: auto;
-    border-radius: 6px;
+    border-radius: 12px;
     box-shadow: 2px 3px 36px -1px rgba(0,0,0,0.75);
     -webkit-box-shadow: 2px 3px 36px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 3px 36px -1px rgba(0,0,0,0.75);
@@ -28,7 +28,7 @@ html {
 .header {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .header-logo {
@@ -45,7 +45,7 @@ html {
     color: #333333;
     font-size: 32px;
     max-width: 290px;
-    margin: 15px 60px 15px 35px;
+    margin: 15px 30px 15px 30px;
     line-height: 30px;
 }
 
@@ -162,15 +162,15 @@ html {
 .menu {
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 180px;
     background-image: linear-gradient(90deg, rgba(23, 60, 228, 0.6), rgba(5, 194, 252, 0.6) );
-
+    justify-content: center;
 }
 
 .page-control {
     display: flex;
     color: #fff;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     margin-left: 15px;
     align-items: center;
     padding: 6px 0px 6px 20px;
@@ -282,6 +282,8 @@ html {
 .main-content {
     flex: 1;
     height: 520px;
+    background-image: url(./img/bg-4.jpg);
+    background-size: contain;
 }
 
 .content.active {
@@ -296,6 +298,8 @@ html {
 .home-content__top {
     display: flex;
     margin-top: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-content__bot {
@@ -327,46 +331,8 @@ html {
     margin: 0 35px;
 }
 
-.home-weather {
-    display: flex;
-    flex-direction: column;
-    width: 480px;
-    background-image: linear-gradient(180deg, rgba(23, 60, 228, 0.6), rgba(5, 194, 252, 0.6) );
-    padding: 22px;
-    border-radius: 12px;
-    color: #fff;
-    position: relative;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.weather__welcome {
-    font-size: 32px;
-    font-weight: 400;
-}
-
-.weather__name {
-    font-size: 35px;
-    font-weight: 500;
-}
-
-.weather__currentday {
-    font-size: 30px;
-    margin-top: 20px;
-    opacity: 0.8;
-}
-
-.weather__hum-temp {
-    display: flex;
-    gap: 20px;
-    font-size: 30px;
-    margin-top: 20px;
-}
-
-.weather__img {
-    position: absolute;
-    right: 91px;
-    top: 60px;
-    font-size: 86px;
+.aqua-tank-img {
+    margin-left: -40px;
 }
 
     section{
@@ -629,23 +595,5 @@ html {
 
 
 .footer {
-    display: flex;
-    justify-content: center;
-}
-
-.member-img {
-    border-radius: 50%;
-    width: 30px;
-}
-
-.footer-member {
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    gap: 10px;
-}
-
-.member-info {
-    display: flex;
-    flex-direction: column;
+    
 }
