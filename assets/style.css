@@ -307,7 +307,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(180deg, rgba(23, 60, 228, 0.6), rgba(5, 194, 252, 0.6) );
+    background-color: #fff;
     min-width: 400px;
     padding: 15px;
     border-radius: 12px;
@@ -316,7 +316,8 @@ html {
 
 .home-content__bot span {
     font-size: 30px;
-    color: #fff;
+    font-weight: 600;
+    color: #000;
 }
 
 .member-avatar img {
@@ -459,14 +460,13 @@ html {
     }
 
     .content__sensor-1 {
-        display: flex;
-        gap: 35px;
         margin-left: 35px;
         margin-top: 30px;
     }
 
     .sensor-quantity {
-    background-image: linear-gradient(30deg, rgba(23, 60, 228, 0.6), rgba(5, 194, 252, 0.6) );
+        background-image: linear-gradient(90deg, rgba(23, 60, 228, 0.6), rgba(5, 194, 252, 0.6) );
+    background-color: #fff;
     color: #fff;
     width: 300px;
     display: flex;
@@ -484,13 +484,13 @@ html {
 
     .sensor-name i {
         font-size: 10px;
-        color: rgb(18, 15, 238);
+        color: #fff;
         margin-right: 10px;
     }
     
     .sensor-img {
         display: flex;
-        align-items: center;
+        align-items: baseline;
         gap: 10px;
     }
 
@@ -499,76 +499,92 @@ html {
     }
 
     .sensor-img span {
-        font-size: 70px;
+        font-size: 50px;
     }
 
-    .content__sensor-2 {
-        text-align: center;
-    }
-
-    .content__sensor-2 img {
-        width: 400px;
-        margin-top: 30px;
+    .room-wrapper .pump-control {
+        background-color: #F0F8FF;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .devices-control {
-    }
-
-    .devices-title i {
-        font-size: 10px;
-        color: rgb(18, 15, 238);
-        margin-right: 10px;
-    }
-
-    .devices-title {
-        display: flex;
-        align-items: center;
+        padding: 40px;
+        margin: 35px 0 0 35px;
         color: #333333;
-        margin-bottom: 20px;
-        font-weight: 500;
-        font-size: 24px;
+        border-radius: 14px;
+        font-weight: 600;
     }
 
-    .devices-wrapper {
-        background-color: rgb(225, 253, 253);
-        color: #000;
+    .auto-control {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 14px;
+        margin-bottom: 30px;
+    }
+
+    .auto-control .control-text {
+        font-size: 25px;
+    }
+
+    .auto-control .control-button {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 25px;
-        border-radius: 14px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        width: 315px;
-        margin-bottom: 30px;
-        text-transform: uppercase;
     }
 
-    .empty-wrapper {
-        background-color: rgb(225, 253, 253);
-        color: #000;
+    .manual-control {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 14px;
+    }
+
+    .manual-control .control-text {
+        font-size: 25px;
+    }
+
+    .manual-control .control-button {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 25px;
-        border-radius: 14px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        width: 315px;
-        margin-bottom: 30px;
-        text-transform: uppercase;
+        flex-direction: column;
+        gap: 20px;
     }
 
-    .devices-wrapper .toggle {
+    .control-button .pump-btn {
+        display: flex;
+        justify-content: space-between;
+    }
+    .control-button .drain-btn {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .room-wrapper .pump-performance {
+        background-color: #F0F8FF;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        margin: 35px 0 0 100px;
+        color: #333333;
+        border-radius: 14px;
+        font-weight: 600;
+    }
+
+    .pump-performance .water-level-quantity {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .water-level-quantity #mucnuoc {
+        color: rgb(7, 37, 170);
+    }
+
+    .pump-performance .water-level-img {
+        padding: 10px;
+        border-radius: 14px;
+        background-color: #fff;
+    }
+
+    .toggle {
         background-color: #444;
         width: 60px;
         height: 30px;
         border-radius: 30px;
         position: relative;
-    }
-
-    .devices-wrapper.active {
-        background-image: linear-gradient(30deg, rgba(247, 6, 227, 0.6), rgba(5, 194, 252, 0.6) );
-        color: #fff;
     }
 
     .toggle .toggle-btn {

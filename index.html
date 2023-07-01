@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/assets/img/logo-3.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/img/logo-2.webp">
 </head>
 <body>
     <div id="toast">    
@@ -122,22 +122,7 @@
                         </div>
                     </div>
                     <div class="home-content__bot">
-                        <span>Members: </span>
-                        <div class="member-avatar">
-                            <img src="./assets/img/avt1.png" alt="">
-                        </div>
-                        <div class="member-avatar">
-                            <img src="./assets/img/avt2.png" alt="">
-                        </div>
-                        <div class="member-avatar">
-                            <img src="./assets/img/avt3.png" alt="">
-                        </div>
-                        <div class="member-avatar">
-                            <img src="./assets/img/avt5.png" alt="">
-                        </div>
-                        <div class="member-avatar">
-                            <img src="./assets/img/businessman-character-avatar-isolated_24877-60111.webp" alt="">
-                        </div>
+                            <span class="weather__currentday"></span>
                     </div>
                 </div>
                 <div class="content">
@@ -151,59 +136,9 @@
                                     </h2>
                                     <div class="sensor-img">
                                         <i class="fa-solid fa-temperature-three-quarters"></i>
-                                        <span id="nhietdo-1"></span> <span>&deg;C</span>
+                                        <span id="nhietdo"></span> <span>&deg;C</span>
                                     </div>
                                 </div>
-                                <div class="sensor-quantity">
-                                    <h2 class="sensor-name">
-                                        <i class="fa-sharp fa-solid fa-circle"></i>
-                                        Humidity
-                                    </h2>
-                                    <div class="sensor-img">
-                                        <i class="fa-solid fa-droplet"></i>
-                                        <span id="doam-1"></span> <span>%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content__sensor-2">
-                                <img src="./assets/img/6370fd_e43f76df0db345adbd7fa4d3b3d16d3a~mv2.webp" alt="" class="sensor-map-img">
-                            </div>
-                        </div>
-                        <div class="devices-control">
-                            <h3 class="devices-title">
-                                <i class="fa-sharp fa-solid fa-circle"></i>
-                                Devices
-                            </h3>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-lightbulb"></i>
-                                    <span>Lights</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-wifi"></i>
-                                    <span>Wi-fi</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-tv"></i>
-                                    <span>TV</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="empty-wrapper">
-                                <span>empty</span>
-                                <i style="font-size: 20px; cursor: pointer;" onclick="showToast()" class="fa-solid fa-circle-plus"></i>
                             </div>
                         </div>
                     </div>
@@ -215,201 +150,62 @@
                                 <div class="sensor-quantity">
                                     <h2 class="sensor-name">
                                         <i class="fa-sharp fa-solid fa-circle"></i>
-                                        Temperature
-                                    </h2>
-                                    <div class="sensor-img">
-                                        <i class="fa-solid fa-temperature-three-quarters"></i>
-                                        <span id="nhietdo-2"></span> <span>&deg;C</span>
-                                    </div>
-                                </div>
-                                <div class="sensor-quantity">
-                                    <h2 class="sensor-name">
-                                        <i class="fa-sharp fa-solid fa-circle"></i>
-                                        Humidity
+                                        Turbidity
                                     </h2>
                                     <div class="sensor-img">
                                         <i class="fa-solid fa-droplet"></i>
-                                        <span id="doam-2"></span> <span>%</span>
+                                        <span id="doam"></span> <span>FTU</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="content__sensor-2">
-                                <img src="./assets/img/6370fd_e43f76df0db345adbd7fa4d3b3d16d3a~mv2.webp" alt="" class="sensor-map-img">
-                            </div>
-                        </div>
-                        <div class="devices-control">
-                            <h3 class="devices-title">
-                                <i class="fa-sharp fa-solid fa-circle"></i>
-                                Devices
-                            </h3>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-lightbulb"></i>
-                                    <span>Lights</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-wifi"></i>
-                                    <span>Wi-fi</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-tv"></i>
-                                    <span>TV</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="empty-wrapper">
-                                <span>empty</span>
-                                <i style="font-size: 20px; cursor: pointer;" onclick="showToast()" class="fa-solid fa-circle-plus"></i>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="content">
                     <div class="room-wrapper">
-                        <div class="content__sensor">
-                            <div class="content__sensor-1">
-                                <div class="sensor-quantity">
-                                    <h2 class="sensor-name">
-                                        <i class="fa-sharp fa-solid fa-circle"></i>
-                                        Temperature
-                                    </h2>
-                                    <div class="sensor-img">
-                                        <i class="fa-solid fa-temperature-three-quarters"></i>
-                                        <span id="nhietdo-3"></span> <span>&deg;C</span>
-                                    </div>
-                                </div>
-                                <div class="sensor-quantity">
-                                    <h2 class="sensor-name">
-                                        <i class="fa-sharp fa-solid fa-circle"></i>
-                                        Humidity
-                                    </h2>
-                                    <div class="sensor-img">
-                                        <i class="fa-solid fa-droplet"></i>
-                                        <span id="doam-3"></span> <span>%</span>
+                        <div class="pump-control">
+                            <div class="auto-control">
+                                <span class="control-text">AUTO MODE</span>
+                                <div class="control-button">
+                                    <span>TURN ON/OFF</span>
+                                    <div class="toggle">
+                                        <div class="toggle-btn"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="content__sensor-2">
-                                <img src="./assets/img/6370fd_e43f76df0db345adbd7fa4d3b3d16d3a~mv2.webp" alt="" class="sensor-map-img">
+                            <div class="manual-control">
+                                <span class="control-text">MANUAL MODE</span>
+                                <div class="control-button">
+                                    <div class="pump-btn">
+                                        <span>PUMP</span>
+                                        <div class="toggle">
+                                            <div class="toggle-btn"></div>
+                                        </div>
+                                    </div>
+                                    <div class="drain-btn">
+                                        <span>DRAIN</span>
+                                        <div class="toggle">
+                                            <div class="toggle-btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="devices-control">
-                            <h3 class="devices-title">
-                                <i class="fa-sharp fa-solid fa-circle"></i>
-                                Devices
-                            </h3>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-lightbulb"></i>
-                                    <span>Lights</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
+                        <div class="pump-performance">
+                            <div class="water-level-quantity">
+                                <span>Current water level:</span>
+                                <span id="mucnuoc"></span>
+                                <span>cm</span>
                             </div>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-wifi"></i>
-                                    <span>Wi-fi</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-tv"></i>
-                                    <span>TV</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="empty-wrapper">
-                                <span>empty</span>
-                                <i style="font-size: 20px; cursor: pointer;" onclick="showToast()" class="fa-solid fa-circle-plus"></i>
+                            <div class="water-level-img">
+                                <img src="./assets/img/WaterTank.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="content">
                     <div class="room-wrapper">
-                        <div class="content__sensor">
-                            <div class="content__sensor-1">
-                                <div class="sensor-quantity">
-                                    <h2 class="sensor-name">
-                                        <i class="fa-sharp fa-solid fa-circle"></i>
-                                        Temperature
-                                    </h2>
-                                    <div class="sensor-img">
-                                        <i class="fa-solid fa-temperature-three-quarters"></i>
-                                        <span id="nhietdo-3"></span> <span>&deg;C</span>
-                                    </div>
-                                </div>
-                                <div class="sensor-quantity">
-                                    <h2 class="sensor-name">
-                                        <i class="fa-sharp fa-solid fa-circle"></i>
-                                        Humidity
-                                    </h2>
-                                    <div class="sensor-img">
-                                        <i class="fa-solid fa-droplet"></i>
-                                        <span id="doam-3"></span> <span>%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content__sensor-2">
-                                <img src="./assets/img/6370fd_e43f76df0db345adbd7fa4d3b3d16d3a~mv2.webp" alt="" class="sensor-map-img">
-                            </div>
-                        </div>
-                        <div class="devices-control">
-                            <h3 class="devices-title">
-                                <i class="fa-sharp fa-solid fa-circle"></i>
-                                Devices
-                            </h3>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-lightbulb"></i>
-                                    <span>Lights</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-wifi"></i>
-                                    <span>Wi-fi</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="devices-wrapper">
-                                <div class="device-img">
-                                    <i class="fa-solid fa-tv"></i>
-                                    <span>TV</span>
-                                </div>
-                                <div class="toggle">
-                                    <div class="toggle-btn" ></div>
-                                </div>
-                            </div>
-                            <div class="empty-wrapper">
-                                <span>empty</span>
-                                <i style="font-size: 20px; cursor: pointer;" onclick="showToast()" class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

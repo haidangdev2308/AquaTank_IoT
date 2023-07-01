@@ -53,9 +53,9 @@ function toast({ title = "", message = "", type = "info", duration = 2000 }) {
     }
 
     //current day, month
-    // const dayMonth = document.querySelector('.weather__currentday')
-    // var date = new Date()
-    // dayMonth.innerHTML = `${date.getDate()} THÁNG ${date.getMonth() + 1}`
+    const dayMonth = document.querySelector('.weather__currentday')
+    var date = new Date()
+    dayMonth.innerHTML = `${date.getDate()} THÁNG ${date.getMonth() + 1} NĂM ${date.getFullYear()}`
 
     //timing
     let section = document.querySelector("section"),
@@ -105,26 +105,26 @@ function toast({ title = "", message = "", type = "info", duration = 2000 }) {
         })
 
         //toggle button
-        let toggles = document.querySelectorAll('.toggle')
-        let toggleBtn = document.querySelectorAll('.toggle-btn')
-        let wrapperBtn = document.querySelectorAll('.devices-wrapper')
+        // let toggles = document.querySelectorAll('.toggle')
+        // let toggleBtn = document.querySelectorAll('.toggle-btn')
+        // let wrapperBtn = document.querySelectorAll('.devices-wrapper')
 
-        toggleBtn.forEach((toggle,index) => {
-            toggle.onclick = function() {
-                toggles[index].classList.toggle('active')
-                wrapperBtn[index].classList.toggle('active')
-                if (toggles[0].classList.contains('active')) {
-                    firebase.database().ref("/TT_IoT").update({
-                        "BULB_01": "ON"
-                        })
-                }
-                else {
-                    firebase.database().ref("/TT_IoT").update({
-                        "BULB_01": "OFF"
-                    })
-                }
-            }
-        })
+        // toggleBtn.forEach((toggle,index) => {
+        //     toggle.onclick = function() {
+        //         toggles[index].classList.toggle('active')
+        //         wrapperBtn[index].classList.toggle('active')
+        //         if (toggles[0].classList.contains('active')) {
+        //             firebase.database().ref("/TT_IoT").update({
+        //                 "BULB_01": "ON"
+        //                 })
+        //         }
+        //         else {
+        //             firebase.database().ref("/TT_IoT").update({
+        //                 "BULB_01": "OFF"
+        //             })
+        //         }
+        //     }
+        // })
 
 //firebase
 
