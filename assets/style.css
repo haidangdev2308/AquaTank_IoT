@@ -104,7 +104,6 @@ html {
 .header-search {
     border-radius: 8px;
     font-size: 20px;
-    background-image: url('/assets/img/search.9bd3926522ea0937310c.svg');
     background-position: 10px 7px;
     background-repeat: no-repeat;
     background-color: #f3f3f3;
@@ -578,6 +577,41 @@ html {
         border-radius: 14px;
         background-color: #fff;
     }
+
+    .feeding-control {
+        background-color: #F0F8FF;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        margin: 35px 0 0 35px;
+        color: #333333;
+        border-radius: 14px;
+        font-weight: 600;
+    }
+
+    .feeding-text {
+        font-size: 25px;
+    }
+
+    .feeding-btn {
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+    }
+
+    .feeding-timer {
+        background-color: #F0F8FF;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        margin: 35px 0 0 35px;
+        color: #333333;
+        border-radius: 14px;
+        font-weight: 600;
+    }
+
 
     .toggle {
         background-color: #444;

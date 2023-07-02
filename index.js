@@ -128,54 +128,58 @@ function toast({ title = "", message = "", type = "info", duration = 2000 }) {
 
 //firebase
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyB3l0AO-tpv6aBNTWvk4CYcuPhT3wAziqA",
-    authDomain: "tt-iot-f0545.firebaseapp.com",
-    databaseURL: "https://tt-iot-f0545-default-rtdb.firebaseio.com",
-    projectId: "tt-iot-f0545",
-    storageBucket: "tt-iot-f0545.appspot.com",
-    messagingSenderId: "100291256800",
-    appId: "1:100291256800:web:69fb1d959f16a55e010b85"
+    apiKey: "AIzaSyDMGeNcZ9-bkdgreN6R07BHTa5Iwo58yA4",
+    authDomain: "pj2-aquarium.firebaseapp.com",
+    databaseURL: "https://pj2-aquarium-default-rtdb.firebaseio.com",
+    projectId: "pj2-aquarium",
+    storageBucket: "pj2-aquarium.appspot.com",
+    messagingSenderId: "622384643282",
+    appId: "1:622384643282:web:f8d1471fcb2894b874010b"
 };
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-// Auto load Temperature-------------------------
-firebase.database().ref("/TT_IoT/nhietdo").on("value",function(snapshot){
-    var nd = snapshot.val();  
-    document.getElementById("nhietdo-1").innerHTML = nd;
-    document.getElementById("nhietdo-2").innerHTML = nd;
-    document.getElementById("nhietdo-3").innerHTML = nd;
+//hiển thị nhiet độ, độ đục, mực nước
+
+firebase.database().ref("/pj2-aqua/nhietdo").on("value",function(snapshot){
+    const nd = snapshot.val();  
+    document.getElementById("nhietdo").innerHTML = nd;
     console.log(nd);
 });
 
-firebase.database().ref("/TT_IoT/doam").on("value",function(snapshot){
-    var da = snapshot.val();  
-    document.getElementById("doam-1").innerHTML = da;
-    document.getElementById("doam-2").innerHTML = da;
-    document.getElementById("doam-3").innerHTML = da;
-    console.log(da);
+// firebase.database().ref("/TT_IoT/doam").on("value",function(snapshot){
+//     const dd = snapshot.val();  
+//     document.getElementById("doduc").innerHTML = dd;
+//     console.log(dd);
+// });
+
+firebase.database().ref("/pj2-aqua/mucnuoc").on("value",function(snapshot){
+    const mn = snapshot.val();  
+    document.getElementById("mucnuoc").innerHTML = mn;
+    console.log(mn);
 });
 
-//Update Bulb status-----when reload website-------
-firebase.database().ref("/TT_IoT").get().then((snapshot) => {
-    if(snapshot.exists()){
-    console.log(snapshot.val())
+// //Update Bulb status-----when reload website-------
+// firebase.database().ref("/TT_IoT").get().then((snapshot) => {
+//     if(snapshot.exists()){
+//     console.log(snapshot.val())
 
-    var bulb_01_status = snapshot.val()
-    if (bulb_01_status["BULB_01"] == "ON")
-        {
-            toggles[0].classList.add('active')
-            wrapperBtn[0].classList.add('active')
-        }
-    else
-        {
-            toggles[0].classList.remove('active')
-            wrapperBtn[0].classList.remove('active')
-        }
-    }
-    else
-    console.log("No data available!")
-})
+//     var bulb_01_status = snapshot.val()
+//     if (bulb_01_status["BULB_01"] == "ON")
+//         {
+//             toggles[0].classList.add('active')
+//             wrapperBtn[0].classList.add('active')
+//         }
+//     else
+//         {
+//             toggles[0].classList.remove('active')
+//             wrapperBtn[0].classList.remove('active')
+//         }
+//     }
+//     else
+//     console.log("No data available!")
+// })
 
