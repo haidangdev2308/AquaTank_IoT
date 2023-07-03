@@ -198,7 +198,7 @@
                                 <span>cm</span>
                             </div>
                             <div class="water-level-img">
-                                <img src="./assets/img/WaterTank.png" alt="">
+                                <img id="tank-performance" src="./assets/img/WaterTank.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -217,7 +217,8 @@
                         <div class="feeding-timer">
                             <span class="feeding-text">SET UP TIME TO FEED</span>
                             <div class="feeding-timer__input">
-                                <input type="datetime" name="" id="">
+                                <input type="text" name="" id="timeInput" placeholder="Nhập thời gian (h:mm:ss)">
+                                <button onclick="sendToFirebase()" class="timer-btn">SET</button>
                             </div>
                         </div>
                     </div>

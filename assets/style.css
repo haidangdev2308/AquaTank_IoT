@@ -467,7 +467,7 @@ html {
         background-image: linear-gradient(90deg, rgba(23, 60, 228, 0.6), rgba(5, 194, 252, 0.6) );
     background-color: #fff;
     color: #fff;
-    width: 300px;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -641,6 +641,45 @@ html {
     .toggle.active .toggle-btn {
         transition: all ease-in-out .3s;
         left: 30px;
+    }
+
+    .feeding-timer__input {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    #timeInput {
+        background-color: #F0F8FF;
+        padding: 30px;
+        color: #333333;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 20px;
+        border: 1px solid #fff;
+        background-color: #fff;
+    }
+
+    #timeInput::placeholder {
+        opacity: 0.7;
+    }
+    
+    .timer-btn {
+        height: 85px;
+        min-width: 80px;
+        border-radius: 14px;
+        border: none;
+        background-image: linear-gradient(90deg, rgba(23, 60, 228, 0.6), rgba(5, 194, 252, 0.6) );
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        box-shadow: 0 10px 20px rgba(50, 7, 206, 0.2);
+        transition: all .5 linear;
+    }
+
+    .timer-btn:hover {
+        background-image: linear-gradient(140deg, rgba(23, 60, 228, 0.6), rgba(5, 194, 252, 0.6) );
     }
 
 

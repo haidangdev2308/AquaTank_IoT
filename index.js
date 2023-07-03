@@ -105,26 +105,54 @@ function toast({ title = "", message = "", type = "info", duration = 2000 }) {
         })
 
         //toggle button
-        // let toggles = document.querySelectorAll('.toggle')
-        // let toggleBtn = document.querySelectorAll('.toggle-btn')
-        // let wrapperBtn = document.querySelectorAll('.devices-wrapper')
+        let toggles = document.querySelectorAll('.toggle')
+        let toggleBtn = document.querySelectorAll('.toggle-btn')
 
-        // toggleBtn.forEach((toggle,index) => {
-        //     toggle.onclick = function() {
-        //         toggles[index].classList.toggle('active')
-        //         wrapperBtn[index].classList.toggle('active')
-        //         if (toggles[0].classList.contains('active')) {
-        //             firebase.database().ref("/TT_IoT").update({
-        //                 "BULB_01": "ON"
-        //                 })
-        //         }
-        //         else {
-        //             firebase.database().ref("/TT_IoT").update({
-        //                 "BULB_01": "OFF"
-        //             })
-        //         }
-        //     }
-        // })
+        toggleBtn.forEach((toggle,index) => {
+            toggle.onclick = function() {
+                toggles[index].classList.toggle('active')
+                if (toggles[0].classList.contains('active')) {
+                    firebase.database().ref("/pj2-aqua").update({
+                        "sw_mode": "ON"
+                        })
+                }
+                else {
+                    firebase.database().ref("/pj2-aqua").update({
+                        "sw_mode": "OFF"
+                    })
+                }
+                if (toggles[1].classList.contains('active')) {
+                    firebase.database().ref("/pj2-aqua").update({
+                        "sw_pump": "ON"
+                        })
+                }
+                else {
+                    firebase.database().ref("/pj2-aqua").update({
+                        "sw_pump": "OFF"
+                    })
+                }
+                if (toggles[2].classList.contains('active')) {
+                    firebase.database().ref("/pj2-aqua").update({
+                        "sw_val": "ON"
+                        })
+                }
+                else {
+                    firebase.database().ref("/pj2-aqua").update({
+                        "sw_val": "OFF"
+                    })
+                }
+                if (toggles[3].classList.contains('active')) {
+                    firebase.database().ref("/pj2-aqua").update({
+                        "sw_feed": "ON"
+                        })
+                }
+                else {
+                    firebase.database().ref("/pj2-aqua").update({
+                        "sw_feed": "OFF"
+                    })
+                }
+            }
+        })
 
 //firebase
 
@@ -150,36 +178,91 @@ firebase.database().ref("/pj2-aqua/nhietdo").on("value",function(snapshot){
     console.log(nd);
 });
 
-// firebase.database().ref("/TT_IoT/doam").on("value",function(snapshot){
-//     const dd = snapshot.val();  
-//     document.getElementById("doduc").innerHTML = dd;
-//     console.log(dd);
-// });
+firebase.database().ref("/pj2-aqua/doduc").on("value",function(snapshot){
+    const dd = snapshot.val();  
+    document.getElementById("doduc").innerHTML = dd;
+    console.log(dd);
+});
 
 firebase.database().ref("/pj2-aqua/mucnuoc").on("value",function(snapshot){
     const mn = snapshot.val();  
     document.getElementById("mucnuoc").innerHTML = mn;
     console.log(mn);
+    let tankImg = document.querySelector('#tank-performance')
+    if(mn > 10) {
+        tankImg.src = './assets/img/WaterTankRed.png'
+    } else if ( mn >= 6 && mn <= 10) {
+        tankImg.src = './assets/img/WaterTank.png'
+    } else if ( mn > 1 && mn < 6) {
+        tankImg.src = './assets/img/WaterTankYellow.png'
+    } else if ( mn <= 1) {
+        tankImg.src = './assets/img/WaterTankEmpty.png'
+    }
 });
 
-// //Update Bulb status-----when reload website-------
-// firebase.database().ref("/TT_IoT").get().then((snapshot) => {
-//     if(snapshot.exists()){
-//     console.log(snapshot.val())
+ // Hàm gửi dữ liệu lên Firebase
+function sendToFirebase() {
+    var timeInput = document.getElementById("timeInput").value;
 
-//     var bulb_01_status = snapshot.val()
-//     if (bulb_01_status["BULB_01"] == "ON")
-//         {
-//             toggles[0].classList.add('active')
-//             wrapperBtn[0].classList.add('active')
-//         }
-//     else
-//         {
-//             toggles[0].classList.remove('active')
-//             wrapperBtn[0].classList.remove('active')
-//         }
-//     }
-//     else
-//     console.log("No data available!")
-// })
+    // Kiểm tra định dạng thời gian
+    var regex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/;
+    if (!regex.test(timeInput)) {
+        alert("Định dạng thời gian không hợp lệ! Vui lòng nhập lại theo định dạng h:mm:ss");
+        return;
+    }
+
+    // Gửi dữ liệu lên Firebase Realtime Database
+    var firebaseRef = firebase.database().ref('/pj2-aqua');
+    firebaseRef.child('timer').set(timeInput).then(function() {
+    alert("cài đặt thời gian cho cá ăn thành công!");
+    }).catch(function(error) {
+    alert("Đã xảy ra lỗi: " + error.message);
+    });
+}
+
+//Update Bulb status-----when reload website-------
+firebase.database().ref("/pj2-aqua").get().then((snapshot) => {
+    if(snapshot.exists()){
+    console.log(snapshot.val())
+
+    let status = snapshot.val()
+    if (status["sw_mode"] == "ON")
+        {
+            toggles[0].classList.add('active')
+        }
+    else
+        {
+            toggles[0].classList.remove('active')
+        }
+    
+    if (status["sw_pump"] == "ON")
+        {
+            toggles[1].classList.add('active')
+        }
+    else
+        {
+            toggles[1].classList.remove('active')
+        }
+
+    if (status["sw_val"] == "ON")
+        {
+            toggles[2].classList.add('active')
+        }
+    else
+        {
+            toggles[2].classList.remove('active')
+        }
+
+    if (status["sw_feed"] == "ON")
+        {
+            toggles[3].classList.add('active')
+        }
+    else
+        {
+            toggles[3].classList.remove('active')
+        }
+    }
+    else
+    console.log("No data available!")
+})
 
