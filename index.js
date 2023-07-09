@@ -189,7 +189,7 @@ firebase.database().ref("/pj2-aqua/mucnuoc").on("value",function(snapshot){
     document.getElementById("mucnuoc").innerHTML = mn;
     console.log(mn);
     let tankImg = document.querySelector('#tank-performance')
-    if(mn > 10) {
+    if(mn > 10 && mn < 14) {
         tankImg.src = './assets/img/WaterTankRed.png'
     } else if ( mn >= 6 && mn <= 10) {
         tankImg.src = './assets/img/WaterTank.png'
@@ -197,6 +197,8 @@ firebase.database().ref("/pj2-aqua/mucnuoc").on("value",function(snapshot){
         tankImg.src = './assets/img/WaterTankYellow.png'
     } else if ( mn <= 1) {
         tankImg.src = './assets/img/WaterTankEmpty.png'
+    } else if ( mn >= 14) {
+        tankImg.src = './assets/img/WaterTankFull.png'
     }
 });
 
